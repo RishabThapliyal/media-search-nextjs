@@ -7,11 +7,11 @@ const HomePage = () => {
   const { query } = useSelector((store) => store.search);
 
   return (
-    <div>
+    <div className="flex flex-col min-h-full w-full">
       <SearchBar />
 
       {query != "" ? (
-        <div>
+        <div className="flex-1 flex flex-col w-full">
           <Tabs />
           <ResultGrid />
         </div>

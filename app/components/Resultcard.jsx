@@ -12,7 +12,7 @@ const ResultCard = ({ item }) => {
   };
 
   return (
-    <div className="w-[18vw] relative h-80 bg-white rounded-xl overflow-hidden">
+    <div className="w-full max-w-full min-w-0 relative h-64 sm:h-72 md:h-80 bg-white rounded-xl overflow-hidden shadow-md">
       <a target="_blank" className="h-full" href={item.url}>
         {item.type == "photo" ? (
           <img
@@ -46,16 +46,17 @@ const ResultCard = ({ item }) => {
       </a>
       <div
         id="bottom"
-        className="flex justify-between gap-3 items-center w-full px-4 py-6 absolute bottom-0 text-white"
+        className="flex justify-between gap-2 sm:gap-3 items-center w-full px-3 sm:px-4 py-4 sm:py-6 absolute bottom-0 text-white bg-gradient-to-t from-black/80 to-transparent"
       >
-        <h2 className="text-lg font-semibold capitalize h-14 overflow-hidden">
+        <h2 className="text-sm sm:text-base md:text-lg font-semibold capitalize line-clamp-2 overflow-hidden flex-1 min-w-0">
           {item.title}
         </h2>
+
         <button
           onClick={() => {
             addToCollection(item);
           }}
-          className="bg-indigo-600 active:scale-95 text-white rounded px-3 py-1 cursor-pointer font-medium"
+          className="bg-indigo-600 active:scale-95 text-white rounded px-2 sm:px-3 py-1 text-sm sm:text-base cursor-pointer font-medium shrink-0"
         >
           Save
         </button>

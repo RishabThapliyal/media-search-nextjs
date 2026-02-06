@@ -9,8 +9,8 @@ const CollectionCard = ({ item }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="w-64 bg-white rounded overflow-hidden flex flex-col shadow-lg">
-      <div className="h-60 overflow-hidden shrink-0">
+    <div className="w-full min-w-0 sm:w-56 md:w-64 bg-white rounded overflow-hidden flex flex-col shadow-lg">
+      <div className="h-48 sm:h-56 md:h-60 overflow-hidden shrink-0">
         {item.type === "video" ? (
           <video
             src={item.src}
@@ -26,7 +26,7 @@ const CollectionCard = ({ item }) => {
           dispatch(removeCollection({ type: item.type, id: item.id }));
           dispatch(removeToast());
         }}
-        className="w-full bg-red-600 text-white py-3 cursor-pointer hover:bg-red-700 transition font-medium"
+        className="w-full bg-red-600 text-white py-2 sm:py-3 text-sm sm:text-base cursor-pointer hover:bg-red-700 transition font-medium"
       >
         Remove
       </button>

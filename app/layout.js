@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 
 export const metadata = {
   title: "Media Search",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({ children }) {
@@ -12,7 +13,7 @@ export default function RootLayout({ children }) {
       <body>
         <ReduxProvider>
           <Navbar />
-          {children}
+          <main className="flex-1 w-full">{children}</main>
         </ReduxProvider>
       </body>
     </html>
